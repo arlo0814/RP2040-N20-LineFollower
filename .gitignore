@@ -1,0 +1,15 @@
+# Compiler outputs
+.pio/
+build/
+bin/
+gen/
+*.o
+*.elf
+*.bin
+*.hex
+
+# Operating System garbage lines
+.DS_Store
+Thumbs.db
+.vscode/ipch/
+.vscode/.browse.vc.db
