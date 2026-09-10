@@ -1,43 +1,47 @@
 #include <Arduino.h>
-
 #include "motors.h"
-#include "sensors.h"
-#include "pin_mapping.h"
 
 void setup()
 {
     Serial.begin(115200);
 
-    pinMode(STATUS_LED, OUTPUT);
-
     motors.begin();
-    sensors.begin();
 
     Serial.println();
     Serial.println("================================");
-    Serial.println("RP2040 N20 Line Follower");
-    Serial.println("Firmware: Hardware Bring-Up");
+    Serial.println("RP2040 N20 MOTOR TEST");
     Serial.println("================================");
+
+    delay(2000);
 }
 
 void loop()
 {
-    SensorState state = sensors.read();
+    Serial.println("LEFT MOTOR FORWARD");
+    motors.setLeft(80);
+    delay(2000);
 
-    Serial.print("S1: ");
-    Serial.print(state.s1);
+    motors.stop();
+    delay(1000);
 
-    Serial.print("  S2: ");
-    Serial.print(state.s2);
+    Serial.println("LEFT MOTOR REVERSE");
+    motors.setLeft(-80);
+    delay(2000);
 
-    Serial.print("  S3: ");
-    Serial.print(state.s3);
+    motors.stop();
+    delay(1000);
 
-    Serial.print("  S4: ");
-    Serial.print(state.s4);
+    Serial.println("RIGHT MOTOR FORWARD");
+    motors.setRight(80);
+    delay(2000);
 
-    Serial.print("  S5: ");
-    Serial.println(state.s5);
+    motors.stop();
+    delay(1000);
 
-    delay(100);
+    Serial.println("RIGHT MOTOR REVERSE");
+    motors.setRight(-80);
+    delay(2000);
+
+    motors.stop();
+    delay(2000);
 }

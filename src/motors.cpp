@@ -37,12 +37,12 @@ void MotorController::setMotor(uint8_t pin1, uint8_t pin2, int speed)
 
 void MotorController::setLeft(int speed)
 {
-    setMotor(MOTOR_A_IN1, MOTOR_A_IN2, speed);
+    setMotor(MOTOR_B_IN1, MOTOR_B_IN2, speed);
 }
 
 void MotorController::setRight(int speed)
 {
-    setMotor(MOTOR_B_IN1, MOTOR_B_IN2, speed);
+    setMotor(MOTOR_A_IN1, MOTOR_A_IN2, speed);
 }
 
 void MotorController::drive(int leftSpeed, int rightSpeed)

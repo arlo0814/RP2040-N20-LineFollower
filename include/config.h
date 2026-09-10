@@ -1,5 +1,4 @@
 #pragma once
-
 #include <Arduino.h>
 
 // ============================================================
@@ -8,9 +7,7 @@
 
 constexpr uint16_t MOTOR_PWM_FREQUENCY = 20000;
 constexpr uint8_t MOTOR_PWM_RESOLUTION = 8;
-
 constexpr int MOTOR_TEST_SPEED = 100;
-
 
 // ============================================================
 // SENSOR CONFIGURATION
